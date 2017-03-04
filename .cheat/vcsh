@@ -1,0 +1,15 @@
+#to init a new vcsh repo
+vcsh init repo_name
+
+#track a file
+vcsh repo_name add /path/to/file
+
+#commit change
+vcsh repo_name commit -m 'commit message'
+
+#add origin to repo
+vcsh repo_name remote add origin <remote_addr>
+
+#push on origin
+vcsh repo_name push -u origin master #first time
+vcsh repo_name push                  #then
