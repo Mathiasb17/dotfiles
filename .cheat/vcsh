@@ -13,3 +13,6 @@ vcsh repo_name remote add origin <remote_addr>
 #push on origin
 vcsh repo_name push -u origin master #first time
 vcsh repo_name push                  #then
+
+#clone repo
+vcsh clone <repo_addr> <repo_name>
