@@ -1,0 +1,12 @@
+#modules required
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+
+#define interval for the curve to be drawn
+x = np.linspace(-5, 5)
+
+#plot the curve in a window
+plt.plot(x, x*x)
+plt.show()
+
