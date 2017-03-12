@@ -35,6 +35,8 @@ bindsym $mod+t exec /opt/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh
 bindsym $mod+n exec nvim-qt
 bindsym $mod+c exec chromium-browser
 bindsym $mod+o exec dolphin4
+bindsym $mod+s exec steam
+bindsym $mod+v exec nvidia-settings
 
 # kill focused window
 bindsym $mod+Shift+q kill

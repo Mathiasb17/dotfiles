@@ -16,3 +16,7 @@ set PATH /opt/node-v4.4.7-linux-x64/bin $PATH
 set LD_LIBRARY_PATH /opt/SFML-2.4.0/lib/ $LD_LIBRARY_PATH
 
 alias vim='pynvim'
+
+export CHEAT_EDITOR="nvim"
+export CHEATCOLORS=true
+export CHEATPATH='~/.config/cheat/cheats'
