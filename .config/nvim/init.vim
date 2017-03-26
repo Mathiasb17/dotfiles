@@ -80,8 +80,7 @@ highlight     iCursor                 guifg=black   guibg=white
 au   BufNewFile,BufRead   *.cu     set   ft=cuda.cpp
 au   BufNewFile,BufRead   *.cuh    set   ft=cuda.cpp
 au   BufNewFile,BufRead   *.glsl   set   ft=cpp.cuda
-au   BufNewFile,BufRead   *.ctp    set   ft=html.php
-au   BufNewFile,BufRead   *.php    set   ft=html.php
+au   BufNewFile,BufRead   *.ctp    set   ft=php
 
 "KEYBOARD MAPPINGS
 "==================================================================================================== 
