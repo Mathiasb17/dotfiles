@@ -53,8 +53,8 @@ set tabstop=4          " 4 spaces per tabulation
 syn on                 " Syntax Hilight on
 set backspace=2        " make backspace work like most other apps
 tabdo set nowrap       " to avoid long lines splitting
-set guioptions-=m      " remove menu bar
-set guioptions-=T      " remove toolbar
+set guioptions+=m      " remove menu bar
+set guioptions+=T      " remove toolbar
 set guioptions+=b      " horizontal scrollbar
 set noswapfile         " no tmp files
 set nf=octal,hex,alpha " increment/decrement with C-a and C-x
