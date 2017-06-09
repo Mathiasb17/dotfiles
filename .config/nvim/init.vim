@@ -58,6 +58,7 @@ set guioptions+=T      " remove toolbar
 set guioptions+=b      " horizontal scrollbar
 set noswapfile         " no tmp files
 set nf=octal,hex,alpha " increment/decrement with C-a and C-x
+set nofoldenable       " disable the folding feature
 
 filetype indent on
 set cindent

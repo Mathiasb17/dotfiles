@@ -15,7 +15,7 @@ set PATH /opt/node-v4.4.7-linux-x64/bin $PATH
 set PATH /usr/local/netbeans-8.2/bin $PATH
 set PATH /usr/local/tor-browser_en-US $PATH
 
-set LD_LIBRARY_PATH /opt/SFML-2.4.0/lib/ $LD_LIBRARY_PATH
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64/:/opt/SFML-2.4.0/lib/:"
 
 alias vim='nvim'
 
@@ -25,7 +25,6 @@ export CHEATPATH='~/.config/cheat/cheats'
 
 export VULKAN_SDK=/home/mathias/vulkan/VulkanSDK/1.0.42.2/x86_64
 set PATH $VULKAN_SDK/bin $PATH
-set LD_LIBRARY_PATH $VULKAN_SDK/lib $LD_LIBRARY_PATH
 set VK_LAYER_PATH $VULKAN_SDK/etc/explicit_layer.d 
 
 export TERM=xterm
