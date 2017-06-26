@@ -70,11 +70,15 @@ set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L-1,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,
 
 "COLOR SCHEME
 "==================================================================================================== 
-colorscheme   torte
+colorscheme   darkblue
 set           guicursor+=a:blinkon0
 highlight     Cursor                  guifg=black   guibg=white
-highlight     MatchParen              guifg=red     guibg=black
+highlight     MatchParen              guifg=red     guibg=none
 highlight     iCursor                 guifg=black   guibg=white
+
+highlight     Cursor                  ctermfg=black   ctermbg=white
+highlight     MatchParen              ctermfg=red     ctermbg=none
+highlight     iCursor                 ctermfg=black   ctermbg=white
 
 "FILE TYPES
 "==================================================================================================== 
@@ -208,3 +212,4 @@ let g:ada_gnat_extensions = 0
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>fl'
 let g:lt_height = 10
+
