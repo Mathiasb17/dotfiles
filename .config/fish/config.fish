@@ -10,10 +10,7 @@ set -q XDG_DATA_HOME
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
-set PATH /usr/local/cuda/bin/ /opt/Qt/Tools/QtCreator/bin $PATH
-set PATH /opt/node-v4.4.7-linux-x64/bin $PATH
-set PATH /usr/local/netbeans-8.2/bin $PATH
-set PATH /usr/local/tor-browser_en-US $PATH
+set PATH /usr/local/cuda/bin/ $PATH
 
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64/:/opt/SFML-2.4.0/lib/:"
 
@@ -22,9 +19,5 @@ alias vim='nvim'
 export CHEAT_EDITOR="nvim"
 export CHEATCOLORS=true
 export CHEATPATH='~/.config/cheat/cheats'
-
-export VULKAN_SDK=/home/mathias/vulkan/VulkanSDK/1.0.42.2/x86_64
-set PATH $VULKAN_SDK/bin $PATH
-set VK_LAYER_PATH $VULKAN_SDK/etc/explicit_layer.d 
 
 export TERM=xterm
