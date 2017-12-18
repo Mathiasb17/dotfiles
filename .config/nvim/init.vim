@@ -1,7 +1,6 @@
 "VUNDLE (required)
 "==================================================================================================== 
 set shell=bash
-set nocompatible              " be iMproved, required
 set splitbelow
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -47,22 +46,20 @@ filetype plugin indent on    " required
 "==================================================================================================== 
 set mouse=a
 let mapleader = "\<Space>"
-set number             " Line numbers
-set shiftwidth=4       " Width to shift over
-set tabstop=4          " 4 spaces per tabulation
-syn on                 " Syntax Hilight on
-set backspace=2        " make backspace work like most other apps
-tabdo set nowrap       " to avoid long lines splitting
-set guioptions+=m      " remove menu bar
-set guioptions+=T      " remove toolbar
-set guioptions+=b      " horizontal scrollbar
-set noswapfile         " no tmp files
-set nf=octal,hex,alpha " increment/decrement with C-a and C-x
-set nofoldenable       " disable the folding feature
+set number                        " Line numbers
+set shiftwidth=4                  " Width to shift over
+set tabstop=4                     " 4 spaces per tabulation
+set backspace=2                   " make backspace work like most other apps
+tabdo set nowrap                  " to avoid long lines splitting
+set guioptions+=m                 " remove menu bar
+set guioptions+=T                 " remove toolbar
+set guioptions+=b                 " horizontal scrollbar
+set noswapfile                    " no tmp files
+set nrformats=bin,octal,hex,alpha " increment/decrement with C-a and C-x
+set nofoldenable                  " disable the folding feature
 
-filetype indent on
 set cindent
-set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L-1,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,k0,m0,j0,J0,)20,*70,#0
+set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L0,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,k0,m0,j0,J0,)20,*70,#0
 
 "FONT SETTINGS
 "==================================================================================================== 
@@ -89,34 +86,6 @@ au   BufNewFile,BufRead   *.ctp    set   ft=php
 
 "KEYBOARD MAPPINGS
 "==================================================================================================== 
-function LatexAccents()
-  let b:winview = winsaveview()
-  silent s/ä/\\"a/ge
-  silent s/à/\\`a/ge
-  silent s/â/\\^a/ge
-
-  silent s/ë/\\"e/ge
-  silent s/é/\\'e/ge
-  silent s/è/\\`e/ge
-  silent s/ê/\\^e/ge
-
-  silent s/ï/\\"i/ge
-  silent s/î/\\^i/ge
-
-  silent s/ö/\\"o/ge
-  silent s/ô/\\^o/ge
-  
-  silent s/ü/\\"u/ge
-  silent s/ù/\\`u/ge
-  silent s/û/\\^u/ge
-
-  if(exists('b:winview'))
-    call winrestview(b:winview)
-  endif
-endfunction
-
-vnoremap   <leader>la    :call LatexAccents()
-
 nnoremap   <leader>term :terminal<CR>
 nnoremap   <leader>w    :w<CR>
 nnoremap   <leader>q    :q<CR>
