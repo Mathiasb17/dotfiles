@@ -1,45 +1,43 @@
-"VUNDLE (required)
+"Vim Plug (required)
 "==================================================================================================== 
 set shell=bash
 set splitbelow
 filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 "PLUGIN LIST
 "==================================================================================================== 
-Plugin 'AndrewRadev/switch.vim'       " switch true/false etc.
-Plugin 'beyondmarc/opengl.vim'        " opengl keywords hilight
-Plugin 'djjcast/mirodark'             " scheme
-Plugin 'easymotion/vim-easymotion'    " fast motion
-Plugin 'godlygeek/tabular'            " for markdown
-Plugin 'Mathiasb17/vim-snippets'	  " snippet database
-Plugin 'Mathiasb17/a.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'mattn/emmet-vim'              " html zencoding renamed emmet
-Plugin 'neomake/neomake'              " syntax hilight
-Plugin 'Raimondi/delimitMate'         " close parenthesis etc.
-Plugin 'scrooloose/nerdtree'		  " browse project
-Plugin 'scrooloose/nerdcommenter'     " comment hotkeys
-Plugin 'SirVer/ultisnips'             " snippet engine
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'terryma/vim-expand-region'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'tpope/vim-rsi'                " gnu readline for insert mode
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-obsession'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Valloric/ListToggle'
-Plugin 'vim-airline/vim-airline'       
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'fneu/breezy'
+Plug 'AndrewRadev/switch.vim'       " switch true/false etc.
+Plug 'beyondmarc/opengl.vim'        " opengl keywords hilight
+Plug 'djjcast/mirodark'             " scheme
+Plug 'easymotion/vim-easymotion'    " fast motion
+Plug 'godlygeek/tabular'            " for markdown
+Plug 'Mathiasb17/vim-snippets'	  " snippet database
+Plug 'Mathiasb17/a.vim'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'mattn/emmet-vim'              " html zencoding renamed emmet
+Plug 'neomake/neomake'              " syntax hilight
+Plug 'Raimondi/delimitMate'         " close parenthesis etc.
+Plug 'scrooloose/nerdtree'		  " browse project
+Plug 'scrooloose/nerdcommenter'     " comment hotkeys
+Plug 'SirVer/ultisnips'             " snippet engine
+Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-expand-region'
+Plug 'tikhomirov/vim-glsl'
+Plug 'tpope/vim-rsi'                " gnu readline for insert mode
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
+Plug 'plasticboy/vim-markdown'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/ListToggle'
+Plug 'vim-airline/vim-airline'       
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+Plug 'fneu/breezy'
 
-"VUNDLE (Required)
+"Vim Plug (Required)
 "==================================================================================================== 
-call vundle#end() 
+call plug#end() 
 filetype plugin indent on    " required
 
 "BASIC EDITOR SETUP
