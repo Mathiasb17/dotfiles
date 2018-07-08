@@ -130,7 +130,7 @@ let   g:ycm_key_list_select_completion                  =   ['<TAB>']
 let   g:ycm_key_list_previous_completion                =   ['<S-TAB>']
 let   g:ycm_autoclose_preview_window_after_completion   =   0
 let   g:ycm_python_binary_path = '/usr/bin/python3'
-let   g:ycm_server_python_interpreter = 'python2.7'
+let   g:ycm_server_python_interpreter = 'python'
 
 "ultisnips hotkeys
 let   g:UltiSnipsExpandTrigger         =   "<c-l>"

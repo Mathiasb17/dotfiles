@@ -159,3 +159,21 @@ bar {
         status_command i3status
         tray_output primary
 }
+
+# assignments
+assign   [class="Thunderbird"]  1
+assign   [class="Firefox"]  2
+assign   [class="Telegram"]           8
+assign   [class="TokenPay"]           8
+assign   [class="VERGE-qt"]           8
+assign   [class="^discord$"]          9
+assign   [class="Steam"] 10
+
+# startup
+exec thunderbird
+exec firefox
+exec steam
+exec discord
+
+# mouse focus
+focus_follows_mouse no
