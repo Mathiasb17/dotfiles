@@ -31,10 +31,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+t exec /opt/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh
-bindsym $mod+n exec nvim-qt
-bindsym $mod+c exec chromium-browser
-bindsym $mod+o exec dolphin4
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -197,3 +193,13 @@ focus_follows_mouse no
 # mouse wheel in title bar
 bindsym button4 nop
 bindsym button5 nop
+
+# sound volume
+bindsym $mod+Insert exec "pactl set-sink-volume 0 +3%"
+bindsym $mod+Delete exec "pactl set-sink-volume 0 -3%"
+
+# calendar
+bindsym $mod+c exec "zenity --calendar"
+
+# file manager
+bindsym $mod+o exec dolphin4
