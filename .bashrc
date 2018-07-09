@@ -116,4 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-sh .path.sh
+source .path.sh

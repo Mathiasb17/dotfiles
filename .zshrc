@@ -96,4 +96,4 @@ source $ZSH/oh-my-zsh.sh
 #command not found
 source /etc/zsh_command_not_found
 
-sh .path.sh
+source .path.sh
