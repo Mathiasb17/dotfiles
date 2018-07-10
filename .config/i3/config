@@ -186,6 +186,7 @@ exec thunderbird
 exec firefox
 exec steam
 exec discord
+exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00"
 
 # mouse focus
 focus_follows_mouse no
