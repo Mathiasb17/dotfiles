@@ -92,8 +92,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias 'cfgi3'='nvim ~/.config/i3/config'
+alias 'cfgvi'='nvim ~/.config/nvim/init.vim'
+alias 'cfgsh'='nvim ~/.zshrc'
 
 #command not found
 source /etc/zsh_command_not_found
 
+# path
 source .path.sh
+
