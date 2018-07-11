@@ -165,6 +165,8 @@ bar {
             active_workspace   #cb4b16 #cb4b16 #eee8d5
             inactive_workspace #b58900 #b58900 #eee8d5
 		}
+
+		position top
 }
 
 # class                 border  backgr. text    indicator
@@ -187,6 +189,7 @@ exec firefox
 exec steam
 exec discord
 exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00"
+exec "feh --bg-fill ~/Pictures/ocean.jpg"
 
 # mouse focus
 focus_follows_mouse no
