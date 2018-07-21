@@ -184,12 +184,11 @@ assign [class="^discord$"   ] 9
 assign [class="Steam"       ] 10
 
 # startup
-exec thunderbird
-exec firefox
-exec steam
-exec discord
-exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00"
-exec "feh --bg-fill ~/Pictures/ocean.jpg"
+exec --no-startup-id thunderbird 
+exec --no-startup-id firefox 
+exec --no-startup-id steam 
+exec --no-startup-id "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00"
+exec_always --no-startup-id "feh --bg-fill ~/Pictures/ocean.jpg"
 
 # mouse focus
 focus_follows_mouse no
@@ -198,12 +197,22 @@ focus_follows_mouse no
 bindsym button4 nop
 bindsym button5 nop
 
+###################
+###  BINDINGS   ###
+###################
+
 # sound volume
 bindsym $mod+Insert exec "pactl set-sink-volume 0 +3%"
 bindsym $mod+Delete exec "pactl set-sink-volume 0 -3%"
 
 # calendar
-bindsym $mod+c exec "zenity --calendar"
+bindsym $mod+c exec --no-startup-id "zenity --calendar" 
 
 # file manager
-bindsym $mod+o exec dolphin4
+bindsym $mod+o exec --no-startup-id dolphin4 
+
+# Qt Creator
+bindsym $mod+q exec --no-startup-id "/opt/Qt/Tools/QtCreator/bin/qtcreator"
+
+# Netflix
+bindsym $mod+n exec --no-startup-id "google-chrome netflix.com"
