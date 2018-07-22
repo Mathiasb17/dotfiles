@@ -97,6 +97,9 @@ alias 'cfgvi'='nvim ~/.config/nvim/init.vim'
 alias 'cfgsh'='nvim ~/.zshrc'
 alias 'apt'='sudo apt'
 alias 'apt-get'='sudo apt-get'
+alias 'vcsha'='vcsh mathias add'
+alias 'vcshca'='vcsh mathias commit -a'
+alias 'vcshp'='vcsh mathias push'
 
 #command not found
 source /etc/zsh_command_not_found
