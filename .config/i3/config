@@ -202,8 +202,8 @@ bindsym button5 nop
 ###################
 
 # sound volume
-bindsym $mod+Insert exec "pactl set-sink-volume 0 +3%"
-bindsym $mod+Delete exec "pactl set-sink-volume 0 -3%"
+bindsym $mod+Insert exec "pactl set-sink-volume 0 +4%"
+bindsym $mod+Delete exec "pactl set-sink-volume 0 -4%"
 
 # calendar
 bindsym $mod+c exec --no-startup-id "zenity --calendar" 
