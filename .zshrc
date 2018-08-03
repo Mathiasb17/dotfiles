@@ -100,6 +100,7 @@ alias 'apt-get'='sudo apt-get'
 alias 'vcsha'='vcsh mathias add'
 alias 'vcshca'='vcsh mathias commit -a'
 alias 'vcshp'='vcsh mathias push'
+alias 'distrib'='lsb_release -a'
 
 #command not found
 source /etc/zsh_command_not_found
