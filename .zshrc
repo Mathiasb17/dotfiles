@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/mathias/.oh-my-zsh"
+export ZSH="/home/mathias/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -63,7 +63,7 @@ ZSH_THEME="bira"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+git
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,3 +102,9 @@ source /etc/zsh_command_not_found
 
 alias cfgi3='nvim ~/.config/i3/config'
 alias cfgvi='nvim ~/.config/nvim/init.vim'
+
+alias vcsha='vcsh dotfiles add'
+alias vcshs='vcsh dotfiles status'
+alias vcshd='vcsh dotfiles diff'
+alias vcshc='vcsh dotfiles commit -a'
+alias vcshp='vcsh dotfiles push'

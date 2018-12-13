@@ -1,0 +1,25 @@
+[user]
+	name = Mathias
+	email = mathiasb17@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[github]
+	user = mathiasb17
+[web]
+	browser = firefox
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
