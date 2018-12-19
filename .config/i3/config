@@ -239,7 +239,7 @@ bindsym $mod+Delete exec "pactl set-sink-volume 0 -4%"
 bindsym $mod+c exec --no-startup-id "zenity --calendar" 
 
 # File manager
-bindsym $mod+o exec --no-startup-id dolphin4 
+bindsym $mod+o exec --no-startup-id nautilus
 
 # Qt Creator
 bindsym $mod+q exec --no-startup-id "/opt/Qt/Tools/QtCreator/bin/qtcreator"
