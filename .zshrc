@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # command not found
-source /etc/zsh_command_not_found
+#source /etc/zsh_command_not_found
 
 alias cfgi3='nvim ~/.config/i3/config'
 alias cfgvi='nvim ~/.config/nvim/init.vim'
