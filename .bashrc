@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -115,5 +115,34 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+source /home/mathias/Git/itron.visualstudio.com/DefaultCollection/RnD/_git/RivaPlatformASIC.toolchains/deploymentTools/vsts_deploy.sh
+export PATH=$PATH:/home/mathias/Git/itron.visualstudio.com/DefaultCollection/RnD/_git/RivaPlatformASIC.toolchains
+# defaults
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
-source .path.sh
+# container aliases
+alias lxclist="~/itronGit/RivaPlatformASIC.toolchains/containerTools/listContainers.sh"
+alias enterGen5="~/itronGit/RivaPlatformASIC.toolchains/containerTools/enterContainer.sh ubuntu-mathias-Gen5Riva-bionic"
+
+# git
+
+# git stash aliases
+alias gsl='git stash list'
+alias gss='git stash save'
+alias gst='git stash'
+alias gsa='git stash apply'
+alias gsp='git stash pop'
+
+# git commit aliases
+alias gcm='git commit'
+alias gcma='git commit -a'
+alias gcmam='git commit -a -m'
+
+# git push/pull aliases
+alias gpsh='git push'
+alias gpll='git pull'
+
+# git deltas aliases
+alias gs='git status'
+alias gd='git diff'
