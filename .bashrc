@@ -146,3 +146,15 @@ alias gpll='git pull'
 # git deltas aliases
 alias gs='git status'
 alias gd='git diff'
+
+
+alias gadog='git log --all --decorate --oneline --graph'
+
+gl()
+{
+	if [ -z "$1" ]; then
+		git log;
+	else
+		git log -$1;
+	fi
+}
