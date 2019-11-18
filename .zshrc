@@ -26,8 +26,14 @@ ZSH_THEME="bira"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -62,9 +68,7 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,9 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -96,15 +97,49 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#
 
-# command not found
-#source /etc/zsh_command_not_found
+source /home/mathias/Git/itron.visualstudio.com/DefaultCollection/RnD/_git/RivaPlatformASIC.toolchains/deploymentTools/vsts_deploy.sh
+export PATH=$PATH:/home/mathias/Git/itron.visualstudio.com/DefaultCollection/RnD/_git/RivaPlatformASIC.toolchains
+# defaults
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
-alias cfgi3='nvim ~/.config/i3/config'
-alias cfgvi='nvim ~/.config/nvim/init.vim'
+# container aliases
+alias lxclist="~/itronGit/RivaPlatformASIC.toolchains/containerTools/listContainers.sh"
+alias entergen5="~/itronGit/RivaPlatformASIC.toolchains/containerTools/enterContainer.sh ubuntu-mathias-Gen5Riva-bionic"
 
-alias vcsha='vcsh dotfiles add'
-alias vcshs='vcsh dotfiles status'
-alias vcshd='vcsh dotfiles diff'
-alias vcshc='vcsh dotfiles commit -a'
-alias vcshp='vcsh dotfiles push'
+# git
+
+# git stash aliases
+alias gsl='git stash list'
+alias gss='git stash save'
+alias gst='git stash'
+alias gsa='git stash apply'
+alias gsp='git stash pop'
+
+# git commit aliases
+alias gcm='git commit'
+alias gcma='git commit -a'
+alias gcmam='git commit -a -m'
+
+# git push/pull aliases
+alias gpsh='git push'
+alias gpll='git pull'
+
+# git deltas aliases
+alias gs='git status'
+alias gd='git diff'
+
+
+alias gadog='git log --all --decorate --oneline --graph'
+
+gl()
+{
+	if [ -z "$1" ]; then
+		git log;
+	else
+		git log -$1;
+	fi
+}
