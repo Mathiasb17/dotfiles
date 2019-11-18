@@ -28,7 +28,7 @@ Plug 'tpope/vim-rsi'                " gnu readline for insert mode
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 Plug 'plasticboy/vim-markdown'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'Valloric/ListToggle'
 Plug 'vim-airline/vim-airline'       
 Plug 'mattn/webapi-vim'
@@ -84,6 +84,10 @@ au   BufNewFile,BufRead   *.ctp    set   ft=php
 
 "KEYBOARD MAPPINGS
 "==================================================================================================== 
+vnoremap   <leader>sed  :s/\v//g
+nnoremap   <leader>sed  :s/\v//g
+nnoremap   <leader>read ! 
+
 nnoremap   <leader>term :terminal<CR>
 nnoremap   <leader>w    :w<CR>
 nnoremap   <leader>q    :q<CR>
