@@ -124,6 +124,7 @@ export EDITOR="$VISUAL"
 # container aliases
 alias lxclist="~/itronGit/RivaPlatformASIC.toolchains/containerTools/listContainers.sh"
 alias enterGen5="~/itronGit/RivaPlatformASIC.toolchains/containerTools/enterContainer.sh ubuntu-mathias-Gen5Riva-bionic"
+alias entertrusty="lxc exec ubuntu-$USER-RIVA-FIRMWARE-trusty -- sudo --login -u $USER"
 
 # git
 
