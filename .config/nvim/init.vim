@@ -28,7 +28,7 @@ Plug 'tpope/vim-rsi'                " gnu readline for insert mode
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 Plug 'plasticboy/vim-markdown'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 Plug 'Valloric/ListToggle'
 Plug 'vim-airline/vim-airline'       
 Plug 'mattn/webapi-vim'
@@ -135,6 +135,10 @@ let   g:ycm_key_list_previous_completion                =   ['<S-TAB>']
 let   g:ycm_autoclose_preview_window_after_completion   =   0
 let   g:ycm_python_binary_path = '/usr/bin/python3'
 let   g:ycm_server_python_interpreter = 'python'
+
+nnoremap <Leader>def :YcmCompleter GoToDefinition<CR>
+nnoremap <Leader>dec :YcmCompleter GoToDeclaration<CR>
+nnoremap <Leader>inc :YcmCompleter GoToInclude<CR>
 
 "ultisnips hotkeys
 let   g:UltiSnipsExpandTrigger         =   "<c-l>"
