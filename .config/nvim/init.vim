@@ -8,32 +8,25 @@ call plug#begin('~/.vim/plugged')
 "PLUGIN LIST
 "==================================================================================================== 
 Plug 'AndrewRadev/switch.vim'       " switch true/false etc.
-Plug 'beyondmarc/opengl.vim'        " opengl keywords hilight
 Plug 'djjcast/mirodark'             " scheme
 Plug 'easymotion/vim-easymotion'    " fast motion
 Plug 'godlygeek/tabular'            " for markdown
-Plug 'Mathiasb17/vim-snippets'	  " snippet database
-Plug 'Mathiasb17/a.vim'
+Plug 'honza/vim-snippets'           " snippet database
+Plug 'vim-scripts/a.vim'            " switch header/impl
 Plug 'jlanzarotta/bufexplorer'
 Plug 'mattn/emmet-vim'              " html zencoding renamed emmet
 Plug 'neomake/neomake'              " syntax hilight
 Plug 'Raimondi/delimitMate'         " close parenthesis etc.
-Plug 'scrooloose/nerdtree'		  " browse project
+Plug 'scrooloose/nerdtree'		    " browse project
 Plug 'scrooloose/nerdcommenter'     " comment hotkeys
 Plug 'SirVer/ultisnips'             " snippet engine
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
-Plug 'tikhomirov/vim-glsl'
 Plug 'tpope/vim-rsi'                " gnu readline for insert mode
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-obsession'
 Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
-Plug 'Valloric/ListToggle'
-Plug 'vim-airline/vim-airline'       
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
-Plug 'fneu/breezy'
+Plug 'vim-airline/vim-airline'
 
 "Vim Plug (Required)
 "==================================================================================================== 
@@ -46,6 +39,7 @@ set mouse=a
 let mapleader = "\<Space>"
 set number                        " Line numbers
 set shiftwidth=4                  " Width to shift over
+set expandtab
 set tabstop=4                     " 4 spaces per tabulation
 set backspace=2                   " make backspace work like most other apps
 tabdo set nowrap                  " to avoid long lines splitting
@@ -65,7 +59,7 @@ set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L0,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/
 
 "COLOR SCHEME
 "==================================================================================================== 
-colorscheme   darkblue
+colorscheme   mirodark " darkblue
 set           guicursor+=a:blinkon0
 highlight     Cursor                  guifg=black   guibg=white
 highlight     MatchParen              guifg=red     guibg=none
@@ -80,7 +74,6 @@ highlight     iCursor                 ctermfg=black   ctermbg=white
 au   BufNewFile,BufRead   *.cu     set   ft=cuda.cpp
 au   BufNewFile,BufRead   *.cuh    set   ft=cuda.cpp
 au   BufNewFile,BufRead   *.glsl   set   ft=cpp.cuda
-au   BufNewFile,BufRead   *.ctp    set   ft=php
 
 "KEYBOARD MAPPINGS
 "==================================================================================================== 
@@ -133,12 +126,13 @@ let   g:ycm_global_ycm_extra_conf                       =   "~/.ycm_extra_conf.p
 let   g:ycm_key_list_select_completion                  =   ['<TAB>']
 let   g:ycm_key_list_previous_completion                =   ['<S-TAB>']
 let   g:ycm_autoclose_preview_window_after_completion   =   0
-let   g:ycm_python_binary_path = '/usr/bin/python3'
-let   g:ycm_server_python_interpreter = 'python'
+let   g:ycm_python_binary_path = '/usr/bin/python3.8'
+let   g:ycm_server_python_interpreter = 'python3.8'
 
 nnoremap <Leader>def :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>dec :YcmCompleter GoToDeclaration<CR>
 nnoremap <Leader>inc :YcmCompleter GoToInclude<CR>
+nnoremap <Leader>ref :YcmCompleter GoToReferences<CR>
 
 "ultisnips hotkeys
 let   g:UltiSnipsExpandTrigger         =   "<c-l>"
@@ -177,15 +171,4 @@ let g:neomake_place_signs = 0
 
 "bufexplorer
 let g:bufExplorerSortBy='name'
-
-"ada mode
-let g:ada_abbrev = 0
-let g:ada_extended_tagging = 0
-let g:ada_extended_completion = 0
-let g:ada_gnat_extensions = 0
-
-"listtoggle
-let g:lt_location_list_toggle_map = '<leader>l'
-let g:lt_quickfix_list_toggle_map = '<leader>fl'
-let g:lt_height = 10
 
