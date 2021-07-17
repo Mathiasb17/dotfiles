@@ -115,7 +115,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source /home/mathias/Git/itron.visualstudio.com/DefaultCollection/RnD/_git/RivaPlatformASIC.toolchains/deploymentTools/vsts_deploy.sh
 export PATH=$PATH:/home/mathias/Git/itron.visualstudio.com/DefaultCollection/RnD/_git/RivaPlatformASIC.toolchains
 # defaults
 export VISUAL=vim
@@ -159,3 +158,42 @@ gl()
 		git log -$1;
 	fi
 }
+source ./deploymentTools/vsts_deploy.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+function compute_idle {
+    local riva_cpu_idle_output="$1"
+
+    if [[ -z "$riva_cpu_idle_output" ]]; then
+        echo -1.0
+        return 1
+    else
+        local ps_user ps_nice ps_sys ps_idle ps_iowait ps_irq ps_softirq ps_steal ps_guest ps_guestnice
+        riva_cpu_idle_output=$(echo "$riva_cpu_idle_output" | sed -r -e '0,/USAGE:/d' -e 's/^\s*(\S+)\s*(\S+)\s*$/\1/')
+        ps_user=$(echo "$riva_cpu_idle_output" | sed -n '1p')
+        ps_nice=$(echo "$riva_cpu_idle_output" | sed -n '2p')
+        ps_sys=$(echo "$riva_cpu_idle_output" | sed -n '3p')
+        ps_idle=$(echo "$riva_cpu_idle_output" | sed -n '4p')
+        ps_iowait=$(echo "$riva_cpu_idle_output" | sed -n '5p')
+        ps_irq=$(echo "$riva_cpu_idle_output" | sed -n '6p')
+        ps_softirq=$(echo "$riva_cpu_idle_output" | sed -n '7p')
+        ps_steal=$(echo "$riva_cpu_idle_output" | sed -n '8p')
+        ps_guest=$(echo "$riva_cpu_idle_output" | sed -n '9p')
+        ps_guestnice=$(echo "$riva_cpu_idle_output" | sed -n '10p')
+
+        #echo "ps_user = $ps_user"
+        #echo "ps_nice = $ps_nice"
+        #echo "ps_sys = $ps_sys"
+        #echo "ps_idle = $ps_idle"
+        #echo "ps_iowait = $ps_iowait"
+        #echo "ps_irq = $ps_irq"
+        #echo "ps_softirq = $ps_softirq"
+        #echo "ps_steal = $ps_steal"
+        #echo "ps_guest = $ps_guest"
+        #echo "ps_guestnice = $ps_guestnice"
+        echo "scale=2; ($ps_idle)/($ps_user + $ps_nice + $ps_sys + $ps_idle + $ps_iowait + $ps_irq + $ps_softirq + $ps_steal + $ps_guest + $ps_guestnice) * 100" | bc
+        return 0
+    fi
+}
+
