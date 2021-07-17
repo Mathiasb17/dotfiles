@@ -27,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 "Vim Plug (Required)
 "==================================================================================================== 
@@ -37,6 +38,7 @@ filetype plugin indent on    " required
 "==================================================================================================== 
 set mouse=a
 let mapleader = "\<Space>"
+set cursorline
 set number                        " Line numbers
 set shiftwidth=4                  " Width to shift over
 set expandtab
@@ -126,13 +128,14 @@ let   g:ycm_global_ycm_extra_conf                       =   "~/.ycm_extra_conf.p
 let   g:ycm_key_list_select_completion                  =   ['<TAB>']
 let   g:ycm_key_list_previous_completion                =   ['<S-TAB>']
 let   g:ycm_autoclose_preview_window_after_completion   =   0
-let   g:ycm_python_binary_path = '/usr/bin/python3.8'
-let   g:ycm_server_python_interpreter = 'python3.8'
+let   g:ycm_python_binary_path = '/usr/bin/python3.6'
+let   g:ycm_server_python_interpreter = 'python3.6'
 
 nnoremap <Leader>def :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>dec :YcmCompleter GoToDeclaration<CR>
 nnoremap <Leader>inc :YcmCompleter GoToInclude<CR>
 nnoremap <Leader>ref :YcmCompleter GoToReferences<CR>
+nnoremap <Leader>sym :YcmCompleter GoToSymbol
 
 "ultisnips hotkeys
 let   g:UltiSnipsExpandTrigger         =   "<c-l>"
