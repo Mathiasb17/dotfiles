@@ -28,6 +28,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'vim-syntastic/syntastic'      " for shellcheck linting
 
 "Vim Plug (Required)
 "==================================================================================================== 
@@ -51,6 +52,7 @@ set guioptions+=b                 " horizontal scrollbar
 set noswapfile                    " no tmp files
 set nrformats=bin,octal,hex,alpha " increment/decrement with C-a and C-x
 set nofoldenable                  " disable the folding feature
+set nostartofline                 " cursor position remains the same when switching away/back to buffer
 
 set cindent
 set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L0,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,k0,m0,j0,J0,)20,*70,#0
