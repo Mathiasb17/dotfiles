@@ -9,19 +9,16 @@ call plug#begin('~/.vim/plugged')
 "==================================================================================================== 
 Plug 'AndrewRadev/switch.vim'       " switch true/false etc.
 Plug 'djjcast/mirodark'             " scheme
-Plug 'easymotion/vim-easymotion'    " fast motion
 Plug 'godlygeek/tabular'            " for markdown
 Plug 'honza/vim-snippets'           " snippet database
-Plug 'vim-scripts/a.vim'            " switch header/impl
+"Plug 'vim-scripts/a.vim'            " switch header/impl
+Plug 'davidhalter/jedi-vim'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'mattn/emmet-vim'              " html zencoding renamed emmet
-Plug 'neomake/neomake'              " syntax hilight
 Plug 'Raimondi/delimitMate'         " close parenthesis etc.
 Plug 'scrooloose/nerdtree'		    " browse project
 Plug 'scrooloose/nerdcommenter'     " comment hotkeys
 Plug 'SirVer/ultisnips'             " snippet engine
 Plug 'terryma/vim-multiple-cursors'
-Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-rsi'                " gnu readline for insert mode
 Plug 'tpope/vim-surround'
 Plug 'plasticboy/vim-markdown'
@@ -29,6 +26,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-syntastic/syntastic'      " for shellcheck linting
+"Plug 'python-mode/python-mode'
 
 "Vim Plug (Required)
 "==================================================================================================== 
@@ -53,6 +51,7 @@ set noswapfile                    " no tmp files
 set nrformats=bin,octal,hex,alpha " increment/decrement with C-a and C-x
 set nofoldenable                  " disable the folding feature
 set nostartofline                 " cursor position remains the same when switching away/back to buffer
+set relativenumber                " relative line numbers
 
 set cindent
 set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L0,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,k0,m0,j0,J0,)20,*70,#0
@@ -90,6 +89,7 @@ nnoremap   <leader>w    :w<CR>
 nnoremap   <leader>q    :q<CR>
 nnoremap   <leader>x    :x<CR>
 nnoremap   <leader>a    :A<CR>
+nnoremap   <leader>m    :call ToggleMouseMode()<CR>
 
 nnoremap   K            i<Enter><Esc>
 nnoremap   gt           :bn<CR>
@@ -130,8 +130,9 @@ let   g:ycm_global_ycm_extra_conf                       =   "~/.ycm_extra_conf.p
 let   g:ycm_key_list_select_completion                  =   ['<TAB>']
 let   g:ycm_key_list_previous_completion                =   ['<S-TAB>']
 let   g:ycm_autoclose_preview_window_after_completion   =   0
-let   g:ycm_python_binary_path = '/usr/bin/python3.6'
-let   g:ycm_server_python_interpreter = 'python3.6'
+let   g:ycm_python_binary_path = '/usr/bin/python3'
+let   g:ycm_server_python_interpreter = 'python3'
+let   g:ycm_confirm_extra_conf = 0
 
 nnoremap <Leader>def :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>dec :YcmCompleter GoToDeclaration<CR>
@@ -177,3 +178,55 @@ let g:neomake_place_signs = 0
 "bufexplorer
 let g:bufExplorerSortBy='name'
 
+"nerdtree
+"enable line numbers
+let NERDTreeShowLineNumbers=1
+"make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
+
+"cscope
+if has('cscope')
+  set cscopetag cscopeverbose
+
+  if has('quickfix')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+  endif
+
+  cnoreabbrev csa cs add
+  cnoreabbrev csf cs find
+  cnoreabbrev csk cs kill
+  cnoreabbrev csr cs reset
+  cnoreabbrev css cs show
+  cnoreabbrev csh cs help
+
+  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+endif
+
+"pymode
+let g:pymode_options_max_line_length = 140
+let g:pymode_lint_options_pep8 = {'max_line_length': g:pymode_options_max_line_length}
+let g:pymode_options_colorcolumn = 1
+
+"other functions
+function ToggleMouseMode()
+    if &mouse == 'v'
+        echo "Switching mouse mode to a"
+        set mouse=a
+    elseif &mouse == 'a'
+        echo "Switching mouse mode to v"
+        set mouse=v
+    endif
+endfunction function
+
+function ConvertMacToLowerCaseFormat() range
+    '<,'>s/\%V\v(..)(..)(..)(..)(..)(..)(..)(..)/\L\1:\L\2:\L\3:\L\4:\L\5:\L\6:\L\7:\L\8/g
+endfunction
+
+function ConvertMacToUpperCaseFormat() range
+    '<,'>s/\%V\v(..):(..):(..):(..):(..):(..):(..):(..)/\U\1\U\2\U\3\U\4\U\5\U\6\U\7\U\8/g
+endfunction
+
+function HilightTrailingSpaces()
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    match ExtraWhitespace /\s\+$/
+endfunction

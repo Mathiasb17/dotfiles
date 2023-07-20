@@ -158,7 +158,6 @@ gl()
 		git log -$1;
 	fi
 }
-source ./deploymentTools/vsts_deploy.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -197,3 +196,4 @@ function compute_idle {
     fi
 }
 
+source ./deploymentTools/vsts_deploy.sh

@@ -199,10 +199,7 @@ client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
 
 # assignments
 #assign [class="Thunderbird" ] 1
-assign [class="Firefox"     ] 2
-#assign [class="TokenPay"    ] 8
-#assign [class="VERGE-Qt"    ] 8
-#assign [class="Telegram"    ] 9
+#assign [class="Firefox"     ] 2
 #assign [class="^discord$"   ] 9
 #assign [class="Steam"       ] 10
 
@@ -229,7 +226,7 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+x exec --no-startup-id i3-dmenu-desktop
 
 # Terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # Firefox
 #bindsym $mod+m exec firefox
@@ -240,7 +237,7 @@ bindsym $mod+Insert exec "pactl set-sink-volume 0 +4%"
 bindsym $mod+Delete exec "pactl set-sink-volume 0 -4%"
 
 # Calendar
-bindsym $mod+c exec --no-startup-id "zenity --calendar" 
+#bindsym $mod+c exec --no-startup-id "zenity --calendar" 
 
 # File manager
 bindsym $mod+o exec --no-startup-id nautilus
@@ -248,8 +245,5 @@ bindsym $mod+o exec --no-startup-id nautilus
 # Qt Creator
 #bindsym $mod+q exec --no-startup-id "/opt/Qt/Tools/QtCreator/bin/qtcreator"
 
-# Netflix
-bindsym $mod+n exec --no-startup-id "google-chrome netflix.com"
-
 # Eclipse
-bindsym $mod+p exec --no-startup-id "/home/mathias/eclipse/cpp-2019-09/eclipse/eclipse"
+#bindsym $mod+p exec --no-startup-id "/home/mathias/eclipse/cpp-2019-09/eclipse/eclipse"
