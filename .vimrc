@@ -7,26 +7,27 @@ call plug#begin('~/.vim/plugged')
 
 "PLUGIN LIST
 "==================================================================================================== 
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
-Plug 'djjcast/mirodark'             " scheme
-Plug 'godlygeek/tabular'            " for markdown
-Plug 'honza/vim-snippets'           " snippet database
-Plug 'davidhalter/jedi-vim'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'scrooloose/nerdtree'		    " browse project
-Plug 'scrooloose/nerdcommenter'     " comment hotkeys
 Plug 'SirVer/ultisnips'             " snippet engine
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-rsi'                " gnu readline for insert mode
-Plug 'tpope/vim-surround'
-Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-airline/vim-airline'
+Plug 'davidhalter/jedi-vim'
+Plug 'djjcast/mirodark'             " scheme
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'           " snippet database
+Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'vim-syntastic/syntastic'      " for shellcheck linting
-Plug 'rhysd/vim-clang-format'
+Plug 'neomake/neomake'
+Plug 'plasticboy/vim-markdown'
 Plug 'python-mode/python-mode'
+Plug 'rhysd/vim-clang-format'
+Plug 'scrooloose/nerdcommenter'     " comment hotkeys
+Plug 'scrooloose/nerdtree'		    " browse project
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rsi'                " gnu readline for insert mode
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'      " for shellcheck linting
 
 "Vim Plug (Required)
 "==================================================================================================== 
@@ -35,28 +36,27 @@ filetype plugin indent on    " required
 
 "BASIC EDITOR SETUP
 "==================================================================================================== 
-set mouse=a
 let mapleader = "\<Space>"
 set autoread
-set cursorline
-set number                        " Line numbers
-set shiftwidth=4                  " Width to shift over
-set expandtab
-set tabstop=4                     " 4 spaces per tabulation
 set backspace=2                   " make backspace work like most other apps
-tabdo set nowrap                  " to avoid long lines splitting
-set guioptions+=m                 " remove menu bar
-set guioptions+=T                 " remove toolbar
-set guioptions+=b                 " horizontal scrollbar
-set noswapfile                    " no tmp files
-set nrformats=bin,octal,hex,alpha " increment/decrement with C-a and C-x
-set nofoldenable                  " disable the folding feature
-set nostartofline                 " cursor position remains the same when switching away/back to buffer
-set relativenumber                " relative line numbers
-set colorcolumn=80
-
 set cindent
 set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L0,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,k0,m0,j0,J0,)20,*70,#0
+set colorcolumn=80
+set cursorline
+set expandtab
+set guioptions+=T                 " remove toolbar
+set guioptions+=b                 " horizontal scrollbar
+set guioptions+=m                 " remove menu bar
+set mouse=a
+set nofoldenable                  " disable the folding feature
+set nostartofline                 " cursor position remains the same when switching away/back to buffer
+set noswapfile                    " no tmp files
+set nrformats=bin,octal,hex,alpha " increment/decrement with C-a and C-x
+set number                        " Line numbers
+set relativenumber                " relative line numbers
+set shiftwidth=4                  " Width to shift over
+set tabstop=4                     " 4 spaces per tabulation
+tabdo set nowrap                  " to avoid long lines splitting
 
 "FONT SETTINGS
 "==================================================================================================== 
@@ -83,8 +83,8 @@ au   BufNewFile,BufRead   *.glsl   set   ft=cpp.cuda
 "KEYBOARD MAPPINGS
 "==================================================================================================== 
 vnoremap   <leader>sed  :s/\v//g
-nnoremap   <leader>sed  :s/\v//g
 nnoremap   <leader>read ! 
+nnoremap   <leader>rel :tabdo windo set relativenumber!<CR>
 
 nnoremap   <leader>term :terminal<CR>
 nnoremap   <leader>w    :w<CR>
@@ -140,7 +140,8 @@ nnoremap <Leader>def :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>dec :YcmCompleter GoToDeclaration<CR>
 nnoremap <Leader>inc :YcmCompleter GoToInclude<CR>
 nnoremap <Leader>ref :YcmCompleter GoToReferences<CR>
-nnoremap <Leader>sym :YcmCompleter GoToSymbol
+nnoremap <Leader>sym :YcmCompleter GoToSymbol<CR>
+nnoremap <Leader>doc :YcmCompleter GetDoc<CR>
 
 "ultisnips hotkeys
 let   g:UltiSnipsExpandTrigger         =   "<c-l>"
