@@ -18,7 +18,7 @@ ZSH_THEME="bira" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenvwrapper pip command-not-found fzf colored-man-pages zsh-syntax-highlighting)
+plugins=(git virtualenvwrapper pip command-not-found fzf colored-man-pages zsh-syntax-highlighting tig)
 
 source $ZSH/oh-my-zsh.sh
 

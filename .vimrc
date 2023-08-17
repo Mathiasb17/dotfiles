@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 "PLUGIN LIST
 "==================================================================================================== 
+"Plug 'rhysd/vim-clang-format'
 Plug 'SirVer/ultisnips'             " snippet engine
 Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
@@ -18,7 +19,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neomake/neomake'
 Plug 'plasticboy/vim-markdown'
 Plug 'python-mode/python-mode'
-Plug 'rhysd/vim-clang-format'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'     " comment hotkeys
 Plug 'scrooloose/nerdtree'		    " browse project
 Plug 'terryma/vim-multiple-cursors'
@@ -57,6 +58,7 @@ set relativenumber                " relative line numbers
 set shiftwidth=4                  " Width to shift over
 set tabstop=4                     " 4 spaces per tabulation
 tabdo set nowrap                  " to avoid long lines splitting
+set encoding=UTF-8
 
 "FONT SETTINGS
 "==================================================================================================== 
@@ -128,25 +130,25 @@ vmap       <Leader>P    "+P
 "PLUGIN MAPPINGS
 "==================================================================================================== 
 "youcompleteme hotkeys
-let   g:ycm_global_ycm_extra_conf                       =   "~/.ycm_extra_conf.py"
-let   g:ycm_key_list_select_completion                  =   ['<TAB>']
-let   g:ycm_key_list_previous_completion                =   ['<S-TAB>']
 let   g:ycm_autoclose_preview_window_after_completion   =   0
+let   g:ycm_confirm_extra_conf = 0
+let   g:ycm_global_ycm_extra_conf                       =   "~/.ycm_extra_conf.py"
+let   g:ycm_key_list_previous_completion                =   ['<S-TAB>']
+let   g:ycm_key_list_select_completion                  =   ['<TAB>']
 let   g:ycm_python_binary_path = '/usr/bin/python3'
 let   g:ycm_server_python_interpreter = 'python3'
-let   g:ycm_confirm_extra_conf = 0
 
-nnoremap <Leader>def :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>dec :YcmCompleter GoToDeclaration<CR>
+nnoremap <Leader>def :YcmCompleter GoToDefinition<CR>
+nnoremap <Leader>doc :YcmCompleter GetDoc<CR>
 nnoremap <Leader>inc :YcmCompleter GoToInclude<CR>
 nnoremap <Leader>ref :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>sym :YcmCompleter GoToSymbol<CR>
-nnoremap <Leader>doc :YcmCompleter GetDoc<CR>
 
 "ultisnips hotkeys
 let   g:UltiSnipsExpandTrigger         =   "<c-l>"
-let   g:UltiSnipsJumpForwardTrigger    =   "<c-s>"
 let   g:UltiSnipsJumpBackwardTrigger   =   "<c-q>"
+let   g:UltiSnipsJumpForwardTrigger    =   "<c-s>"
 
 "If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit = "vertical"
@@ -161,8 +163,8 @@ set noshowmode
 let g:airline#extensions#tabline#enabled = 1 
 
 "expand region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
+vmap   <C-v>   <Plug>(expand_region_shrink)
+vmap   v       <Plug>(expand_region_expand)
 
 "easy motion
 map  <Leader><Leader>w <Plug>(easymotion-bd-w)
@@ -180,6 +182,7 @@ let g:neomake_place_signs = 0
 
 "bufexplorer
 let g:bufExplorerSortBy='name'
+let g:bufExplorerShowRelativePath = 1
 
 "nerdtree
 "enable line numbers
@@ -188,8 +191,8 @@ let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 
 "clang-format
-let g:clang_format#detect_style_file = 1
-let g:clang_format#auto_format = 1
+"let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 0
 
 "cscope
 if has('cscope')
