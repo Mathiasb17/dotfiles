@@ -18,11 +18,14 @@ ZSH_THEME="bira" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenvwrapper pip command-not-found fzf colored-man-pages zsh-syntax-highlighting tig)
+plugins=(git virtualenvwrapper pip command-not-found fzf colored-man-pages zsh-syntax-highlighting tig docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+export EDITOR='vim'
+export VISUAL="$EDITOR"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -30,19 +33,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias cfgzsh="nvim ~/.zshrc"
-alias cfgomz="nvim ~/.oh-my-zsh"
-alias cfgi3="nvim ~/.config/i3/config"
+alias cfgzsh="$EDITOR ~/.zshrc"
+alias cfgomz="$EDITOR ~/.oh-my-zsh"
+alias cfgi3="$EDITOR ~/.config/i3/config"
 
 alias vi='/usr/local/bin/vim'
 alias vim='vi'
-
-export EDITOR='nvim'
-export VISUAL="$EDITOR"
+alias vimzf='vi $(fzf)'
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 
 export LC_NUMERIC="en_US.UTF-8"
 
@@ -51,4 +52,6 @@ alias scp='scp -oHostKeyAlgorithms=+ssh-rsa'
 
 export PATH=$PATH:/home/mathias/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/
 
-source /home/mathias/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/mathias/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

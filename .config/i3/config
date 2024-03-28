@@ -5,7 +5,6 @@
 #######################################################################
 #                          GENERAL BINDINGS                           #
 #######################################################################
-
 # Mod key
 set $mod Mod4
 
@@ -46,7 +45,6 @@ focus_follows_mouse no
 #######################################################################
 #                          WINDOW FOCUS                               #
 #######################################################################
-
 # Change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -62,7 +60,6 @@ bindsym $mod+Right focus right
 #######################################################################
 #                          WINDOW MOVEMENTS                           #
 #######################################################################
-
 # Resize
 bindsym $mod+r mode "resize"
 
@@ -187,7 +184,6 @@ bindsym button5 nop
 #######################################################################
 #                            COLOR SCHEME                             #
 #######################################################################
-
 # class                 border  backgr. text    indicator
 client.focused          #ff0000 #ff0000 #fdf6e3 #2e9ef4
 client.focused_inactive #268bd2 #268bd2 #fdf6e3 #484e50
@@ -196,7 +192,6 @@ client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
 #######################################################################
 #                             WORKSPACE ASSIGNMENTS                   #
 #######################################################################
-
 # assignments
 #assign [class="Thunderbird" ] 1
 #assign [class="Firefox"     ] 2
@@ -206,13 +201,8 @@ client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
 #######################################################################
 #                        STARTUP APPLICATIONS                         #
 #######################################################################
-
 # startup
-#exec --no-startup-id thunderbird 
-#exec --no-startup-id firefox 
-#exec --no-startup-id steam 
-#exec --no-startup-id "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00"
-exec_always --no-startup-id "feh --bg-fill ~/Pictures/ocean.jpg"
+exec_always --no-startup-id "feh --bg-fill ~/Pictures/background.jpg"
 exec_always --no-startup-id vmware-user-suid-wrapper 
 
 #######################################################################
@@ -229,21 +219,11 @@ bindsym $mod+x exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Return exec terminator
 
 # Firefox
-#bindsym $mod+m exec firefox
 bindsym $mod+m exec i3-msg move workspace to output right
 
 # Sound volume
 bindsym $mod+Insert exec "pactl set-sink-volume 0 +4%"
 bindsym $mod+Delete exec "pactl set-sink-volume 0 -4%"
 
-# Calendar
-#bindsym $mod+c exec --no-startup-id "zenity --calendar" 
-
 # File manager
 bindsym $mod+o exec --no-startup-id nautilus
-
-# Qt Creator
-#bindsym $mod+q exec --no-startup-id "/opt/Qt/Tools/QtCreator/bin/qtcreator"
-
-# Eclipse
-#bindsym $mod+p exec --no-startup-id "/home/mathias/eclipse/cpp-2019-09/eclipse/eclipse"

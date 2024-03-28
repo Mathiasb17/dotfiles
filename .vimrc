@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 "PLUGIN LIST
 "==================================================================================================== 
-"Plug 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format'
 Plug 'SirVer/ultisnips'             " snippet engine
 Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
@@ -16,23 +16,25 @@ Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'           " snippet database
 Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'neomake/neomake'
 Plug 'plasticboy/vim-markdown'
 Plug 'python-mode/python-mode'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'     " comment hotkeys
 Plug 'scrooloose/nerdtree'		    " browse project
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rsi'                " gnu readline for insert mode
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'      " for shellcheck linting
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 "Vim Plug (Required)
 "==================================================================================================== 
-call plug#end() 
+call plug#end()
 filetype plugin indent on    " required
 
 "BASIC EDITOR SETUP
@@ -59,6 +61,9 @@ set shiftwidth=4                  " Width to shift over
 set tabstop=4                     " 4 spaces per tabulation
 tabdo set nowrap                  " to avoid long lines splitting
 set encoding=UTF-8
+set hidden
+set list
+set incsearch
 
 "FONT SETTINGS
 "==================================================================================================== 
@@ -85,7 +90,7 @@ au   BufNewFile,BufRead   *.glsl   set   ft=cpp.cuda
 "KEYBOARD MAPPINGS
 "==================================================================================================== 
 vnoremap   <leader>sed  :s/\v//g
-nnoremap   <leader>read ! 
+nnoremap   <leader>read !
 nnoremap   <leader>rel :tabdo windo set relativenumber!<CR>
 
 nnoremap   <leader>term :terminal<CR>
@@ -119,7 +124,7 @@ xnoremap   <left>       <Nop>
 xnoremap   <right>      <Nop>
 xnoremap   Q            <Nop>
 
-"System clipboard shortcuts 
+"System clipboard shortcuts
 vmap       <Leader>y    "+y
 vmap       <Leader>d    "+d
 nmap       <Leader>p    "+p
@@ -160,7 +165,7 @@ set selection=inclusive
 set laststatus=2
 set noshowmode
 
-let g:airline#extensions#tabline#enabled = 1 
+let g:airline#extensions#tabline#enabled = 1
 
 "expand region
 vmap   <C-v>   <Plug>(expand_region_shrink)
@@ -191,8 +196,8 @@ let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 
 "clang-format
-"let g:clang_format#detect_style_file = 1
-let g:clang_format#auto_format = 0
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
 
 "cscope
 if has('cscope')
