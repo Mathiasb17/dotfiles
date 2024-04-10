@@ -44,7 +44,7 @@ set autoread
 set backspace=2                   " make backspace work like most other apps
 set cindent
 set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L0,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,k0,m0,j0,J0,)20,*70,#0
-set colorcolumn=80
+set colorcolumn=128
 set cursorline
 set expandtab
 set guioptions+=T                 " remove toolbar

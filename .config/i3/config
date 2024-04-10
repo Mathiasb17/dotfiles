@@ -226,4 +226,4 @@ bindsym $mod+Insert exec "pactl set-sink-volume 0 +4%"
 bindsym $mod+Delete exec "pactl set-sink-volume 0 -4%"
 
 # File manager
-bindsym $mod+o exec --no-startup-id nautilus
+bindsym $mod+o exec --no-startup-id nemo
