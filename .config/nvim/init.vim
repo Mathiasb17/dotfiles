@@ -11,7 +11,6 @@ Plug 'AndrewRadev/switch.vim'       " switch true/false etc.
 Plug 'djjcast/mirodark'             " scheme
 Plug 'godlygeek/tabular'            " for markdown
 Plug 'honza/vim-snippets'           " snippet database
-"Plug 'vim-scripts/a.vim'            " switch header/impl
 Plug 'davidhalter/jedi-vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'Raimondi/delimitMate'         " close parenthesis etc.
@@ -22,11 +21,10 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-rsi'                " gnu readline for insert mode
 Plug 'tpope/vim-surround'
 Plug 'plasticboy/vim-markdown'
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'vim-syntastic/syntastic'      " for shellcheck linting
-"Plug 'python-mode/python-mode'
+Plug 'neovim/nvim-lspconfig'
+Plug 'ryanoasis/vim-devicons'
 
 "Vim Plug (Required)
 "==================================================================================================== 
@@ -44,25 +42,14 @@ set expandtab
 set tabstop=4                     " 4 spaces per tabulation
 set backspace=2                   " make backspace work like most other apps
 tabdo set nowrap                  " to avoid long lines splitting
-set guioptions+=m                 " remove menu bar
-set guioptions+=T                 " remove toolbar
-set guioptions+=b                 " horizontal scrollbar
 set noswapfile                    " no tmp files
 set nrformats=bin,octal,hex,alpha " increment/decrement with C-a and C-x
 set nofoldenable                  " disable the folding feature
 set nostartofline                 " cursor position remains the same when switching away/back to buffer
 set relativenumber                " relative line numbers
 
-set cindent
-set cinoptions=>1s,e0,n0,f0,{0,}0,^0,L0,:s,=s,l0,b0,gs,hs,N0,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,k0,m0,j0,J0,)20,*70,#0
-
-"FONT SETTINGS
-"==================================================================================================== 
-"set guifont=Monospace\ 10 "font
-
 "COLOR SCHEME
 "==================================================================================================== 
-colorscheme   mirodark " darkblue
 set           guicursor+=a:blinkon0
 highlight     Cursor                  guifg=black   guibg=white
 highlight     MatchParen              guifg=red     guibg=none
@@ -88,7 +75,6 @@ nnoremap   <leader>term :terminal<CR>
 nnoremap   <leader>w    :w<CR>
 nnoremap   <leader>q    :q<CR>
 nnoremap   <leader>x    :x<CR>
-nnoremap   <leader>a    :A<CR>
 nnoremap   <leader>m    :call ToggleMouseMode()<CR>
 
 nnoremap   K            i<Enter><Esc>
