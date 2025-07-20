@@ -163,9 +163,9 @@ for_window [window_role="dialog"] floating enable
 
 assign         [class="steam"]                    10
 assign         [class="discord"]                  10
-assign         [app_id="org.keepassxc.KeePassXC"] 1
-assign         [app_id="firefox_firefox"]         1
-assign         [app_id="thunderbird_esr"]         1
+assign         [app_id="org.keepassxc.KeePassXC"] 2
+assign         [app_id="firefox_firefox"]         2
+assign         [app_id="thunderbird_esr"]         2
 
 #######################################################################
 #                        STARTUP APPLICATIONS                         #
