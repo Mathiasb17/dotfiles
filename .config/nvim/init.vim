@@ -23,8 +23,11 @@ Plug 'tpope/vim-surround'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-fugitive'
+
 
 "Vim Plug (Required)
 "==================================================================================================== 

@@ -105,3 +105,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias vi='/home/mathias/local/nvim/bin/nvim'
 alias vim='vi'
+
+alias cfgsway='vi /home/mathias/.config/sway/config'
