@@ -27,6 +27,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
+Plug 'ycm-core/YouCompleteMe'
 
 
 "Vim Plug (Required)
@@ -36,6 +37,7 @@ filetype plugin indent on    " required
 
 "BASIC EDITOR SETUP
 "==================================================================================================== 
+colorscheme mirodark
 set mouse=a
 let mapleader = "\<Space>"
 set cursorline
