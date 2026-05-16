@@ -25,7 +25,7 @@ sound() {
     case "$1" in
 
         "speaker")
-            pactl set-default-sink alsa_output.pci-0000_2d_00.4.analog-stereo
+            pactl set-default-sink alsa_output.usb-DisplayLink_Dell_Universal_Dock_D6000_1801266506-02.analog-stereo
             ;;
 
         "headphones")
@@ -42,3 +42,10 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
 source $HOME/.local/bin/virtualenvwrapper.sh
+
+export PATH=$PATH:/opt/
+export PATH="/home/mathias/.local/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+
+export PATH="$HOME/.npm-global/bin:$PATH"
